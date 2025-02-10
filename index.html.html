@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Tutorial</title>
+    <link rel="stylesheet" href="Cstyles.css">
+</head>
+<body>
+    <h1>HTML Canvas Tutorial</h1>
+
+    <!-- Introduction Section -->
+    <div class="info-container">
+        <h2>What is the HTML Canvas Element?</h2>
+        <p>The &lt;canvas&gt; element is used to draw graphics, animations, and other visual elements using JavaScript. It allows developers to dynamically generate images, shapes, text, and animations directly in the browser.</p>
+        <h3>How to Use the Canvas Element?</h3>
+        <p>To use the canvas element, follow these steps:</p>
+        <ol>
+            <li>Create a &lt;canvas&gt; element in HTML.</li>
+            <li>Access the canvas with JavaScript using `getContext("2d")`.</li>
+            <li>Use various canvas methods to draw shapes, text, or apply styles.</li>
+        </ol>
+    </div>
+
+    <!-- Syntax Section -->
+    <div class="syntax-container">
+        <h2>Basic Canvas Syntax</h2>
+        <pre>
+&lt;canvas id="myCanvas" width="400" height="300"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+    ctx.fillStyle = "blue";
+    ctx.fillRect(50, 50, 200, 150);
+&lt;/script&gt;
+        </pre>
+    </div>
+
+    <!-- Circle Canvas -->
+    <div class="canvas-container">
+        <h2>Circle</h2>
+        <canvas id="circleCanvas" width="300" height="300"></canvas>
+        <pre>
+&lt;script&gt;
+    let canvas = document.getElementById("circleCanvas");
+    let ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(150, 150, 80, 0, Math.PI * 2);
+    ctx.fillStyle = "#3498db";
+    ctx.fill();
+    ctx.stroke();
+&lt;/script&gt;
+        </pre>
+    </div>
+
+    <!-- Rectangle Canvas -->
+    <div class="canvas-container">
+        <h2>Rectangle</h2>
+        <canvas id="rectangleCanvas" width="300" height="300"></canvas>
+        <pre>
+&lt;script&gt;
+    let canvas = document.getElementById("rectangleCanvas");
+    let ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#e74c3c";
+    ctx.fillRect(50, 50, 200, 150);
+    ctx.strokeRect(50, 50, 200, 150);
+&lt;/script&gt;
+        </pre>
+    </div>
+
+    <!-- Triangle Canvas -->
+    <div class="canvas-container">
+        <h2>Triangle</h2>
+        <canvas id="triangleCanvas" width="300" height="300"></canvas>
+        <pre>
+&lt;script&gt;
+    let canvas = document.getElementById("triangleCanvas");
+    let ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(150, 50);
+    ctx.lineTo(50, 250);
+    ctx.lineTo(250, 250);
+    ctx.closePath();
+    ctx.fillStyle = "#2ecc71";
+    ctx.fill();
+    ctx.stroke();
+&lt;/script&gt;
+        </pre>
+    </div>
+
+    <!-- Linear Gradient Canvas -->
+    <div class="canvas-container">
+        <h2>Linear Gradient</h2>
+        <canvas id="linearGradientCanvas" width="300" height="300"></canvas>
+        <pre>
+&lt;script&gt;
+    let canvas = document.getElementById("linearGradientCanvas");
+    let ctx = canvas.getContext("2d");
+    let gradient = ctx.createLinearGradient(0, 0, 300, 0);
+    gradient.addColorStop(0, "red");
+    gradient.addColorStop(1, "yellow");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 300, 300);
+&lt;/script&gt;
+        </pre>
+    </div>
+
+    <!-- Radial Gradient Canvas -->
+    <div class="canvas-container">
+        <h2>Radial Gradient</h2>
+        <canvas id="radialGradientCanvas" width="300" height="300"></canvas>
+        <pre>
+&lt;script&gt;
+    let canvas = document.getElementById("radialGradientCanvas");
+    let ctx = canvas.getContext("2d");
+    let gradient = ctx.createRadialGradient(150, 150, 10, 150, 150, 100);
+    gradient.addColorStop(0, "blue");
+    gradient.addColorStop(1, "white");
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 300, 300);
+&lt;/script&gt;
+        </pre>
+    </div>
+
+    <!-- Interactive Section -->
+    <div class="interactive-container">
+        <h2>Interactive Section</h2>
+        <button id="generateCanvas">Generate Special Canvases</button>
+        <div id="specialCanvasContainer"></div>
+    </div>
+
+    <script src="cscript.js"></script>
+</body>
+</html>
